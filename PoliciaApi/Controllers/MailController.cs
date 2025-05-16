@@ -56,19 +56,21 @@ namespace PoliciaApi.Controllers
                 using var reader = cmd.ExecuteReader();
 
                 var email = new EmailTools();
+                var username = string.Empty;
                 while (reader.Read())
                 {
+                    username = reader["NOMBRE_COMPLETO"].ToString();
                     await email.SendEmailAsync(reader, reader["CORREO"].ToString(), "Confirmación Pago");
                 }
-
-                transaction.Commit(); // Finaliza correctamente
 
                 var response = new
                 {
                     status = true,
                     code = 200,
-                    response = $"Correo enviado con exito al usuario { reader["NOMBRE_COMPLETO"].ToString() }"
+                    response = $"Correo enviado con exito al usuario { username }"
                 };
+
+                transaction.Commit(); // Finaliza correctamente
 
                 return new OkObjectResult(response);
             }
