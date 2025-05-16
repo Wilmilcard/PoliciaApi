@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.pexels.com/photos/7991486/pexels-photo-7991486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Reemplaza esta URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background: #4CAF50;
+            padding: 15px;
+            color: white;
+            font-size: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            padding: 20px;
+            color: #333;
+        }
+        .content p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .order-details {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .order-details p {
+            margin: 5px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">✅ Pago Confirmado</div>
+        <div class="content">
+            <p>Hola <strong>{NOMBRE_CLIENTE}</strong>,</p>
+            <p>Hemos recibido tu pago con éxito. Aquí están los detalles de tu compra:</p>
+
+            <div class="order-details">
+                <p><strong>Orden #:</strong> {NUMERO_ORDEN}</p>
+                <p><strong>Cine:</strong> {CINE}</p>
+                <p><strong>Sede:</strong> {SEDE}</p>
+                <p><strong>Sala:</strong> {SALA}</p>
+                <p><strong>Pelicula:</strong> {PELICULA}</p>
+                <p><strong>Hora Función:</strong> {FECHA_FUNCION}</p>
+                <p><strong>Monto Pagado:</strong> {MONTO} {MONEDA}</p>
+                <p><strong>Fecha de Pago:</strong> {FECHA_PAGO}</p>
+                <p><strong>Método de Pago:</strong> {METODO_PAGO}</p>
+            </div>
+
+            <p>Si tienes alguna duda, contáctanos.</p>
+            <a href="{URL_SOPORTE}" class="btn">Contactar Soporte</a>
+        </div>
+        <div class="footer">
+            <p>&copy; {AÑO} - Todos los derechos reservados</p>
+        </div>
+    </div>
+</body>
+</html>
